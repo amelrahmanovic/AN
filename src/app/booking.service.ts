@@ -14,4 +14,10 @@ export class BookingService {
            .http
            .get(`${this.uri}`);
   }
+  delete(id) {
+    console.log(id);
+    return this
+              .http
+              .delete(`${this.uri}/${id}`);
+  }
 }

@@ -33,6 +33,7 @@
               <td> {{x.amount}} {{x.currency}} </td>
               <td> {{x.comment}} </td>
               <td>
+                  <a (click) = "delete(x.id)" class="btn btn-danger">Delete</a>
               </td>
           </tr>
   </tbody>

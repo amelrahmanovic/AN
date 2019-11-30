@@ -16,5 +16,10 @@ export class BookingGetComponent implements OnInit {
       this.bookings = data;
     });
   }
-
+  delete(id) {
+    this.bs.delete(id).subscribe(res => {
+      this.bookings.splice(id, 1);
+      this.ngOnInit();
+    });
+   }
 }
