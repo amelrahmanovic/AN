@@ -1,1 +1,79 @@
-<p>booking-get works!</p>
+<table class="table table-striped">
+  <thead class="thead-dark">
+      <tr>
+          <th>
+              Id:
+          </th>
+          <th>
+              capacity_provider_id:
+          </th>
+          <th>
+              date_from:
+          </th>
+          <th>
+              date_to:
+          </th>
+          <th>
+              amount:
+          </th>
+          <th>
+              comment:
+          </th>
+          <th>
+              Action:
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+          <tr *ngFor="let x of bookings">
+              <td> {{x.id}} </td>
+              <td> {{x.capacity_provider_id}} </td>
+              <td> {{x.date_from}} </td>
+              <td> {{x.date_to}} </td>
+              <td> {{x.amount}} {{x.currency}} </td>
+              <td> {{x.comment}} </td>
+              <td>
+              </td>
+          </tr>
+  </tbody>
+</table>
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Id:
+            </th>
+            <th>
+                capacity_provider_id:
+            </th>
+            <th>
+                date_from:
+            </th>
+            <th>
+                date_to:
+            </th>
+            <th>
+                amount:
+            </th>
+            <th>
+                comment:
+            </th>
+            <th>
+                Action:
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr *ngFor="let x of providers">
+                <td> {{x.id}} </td>
+                <td> {{x.name}} </td>
+                <td> {{x.city}} </td>
+                <td> {{x.phone}} </td>
+                <td> {{x.email}} </td>
+                <td> {{x.contract_number}} </td>
+                <td>
+                </td>
+            </tr>
+    </tbody>
+  </table>
