@@ -34,10 +34,10 @@ export class BookingAddComponent implements OnInit {
 
     // tslint:disable-next-line: prefer-for-of
     for (let index = 0; index < this.bookings.length; index++) {
-      console.log(this.bookings[index].comment);
+      console.log(this.bookings[index]);
     }
 
-    console.log(capacity_provider_id);
+    console.log(this.bookings.length);
   }
 
   ngOnInit() {
