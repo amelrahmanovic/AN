@@ -1,1 +1,73 @@
-<p>booking-add works!</p>
+<form >
+  <div class="form-group">
+      <input type="hidden" name="id" id="id" formControlName="id" #id />
+      <input type="hidden" name="capacity_provider_id" id="capacity_provider_id" formControlName="capacity_provider_id" #capacity_provider_id />
+      <label>Object:</label>
+      <input type="text" class="form-control" name="Object" id="Object" placeholder="Object" formControlName="Object" #Object required>
+  </div>
+  <div class="form-group">
+      <label>From:</label>
+      <input type="text" class="form-control" name="From" id="From" placeholder="dd/mm/yyy" formControlName="From" #From required>
+  </div>
+  <div class="form-group">
+      <label>To:</label>
+      <input type="text" class="form-control" name="To" id="To" placeholder="dd/mm/yyy" formControlName="To" #To required>
+  </div>
+  <div class="form-group">
+      <label>Active:</label>
+          <input type="checkbox" class="form-control" name="is_active" id="is_active" formControlName="is_active" #is_active >
+  </div>
+  <div class="form-group">
+      <label>Amount:</label>
+      <input type="text" class="form-control" name="amount" id="amount" formControlName="amount" #amount placeholder="0.00" required>
+  </div>
+  <div class="form-group">
+      <label>Currency:</label>
+      <input type="text" class="form-control" name="currency" id="currency" formControlName="currency" #currency placeholder="Currency" required>
+  </div>
+  <div class="form-group">
+      <label>Comment:</label>
+      <input type="text" class="form-control" name="comment" id="comment" formControlName="comment" #comment placeholder="Currency">
+  </div>
+  <button type="button" class="btn btn-primary" (click)="add(id.value ,capacity_provider_id.value ,Object.value ,From.value ,To.value ,is_active.value ,amount.value ,currency.value ,comment.value)" >Save</button>
+</form>
+
+<div *ngIf="bookings.length >0">
+    <br>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>
+              Object:
+            </th>
+            <th>
+              From:
+            </th>
+            <th>
+              To:
+            </th>
+            <th>
+              Active:
+            </th>
+            <th>
+              Amount:
+            </th>
+            <th>
+              Comment:
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of bookings">
+            <td> {{x.object_name}} </td>
+            <td> {{x.date_from | date:"MM/dd/yyyy"}} </td>
+            <td> {{x.date_to | date:"MM/dd/yyyy"}} </td>
+            <td> {{x.is_active}} </td>
+            <td> {{x.amount}} {{x.currency}} </td>
+            <td> {{x.comment}} </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+
+
