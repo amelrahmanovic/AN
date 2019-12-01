@@ -1,7 +1,10 @@
 <form >
   <div class="form-group">
-      <input type="hidden" name="id" id="id" formControlName="id" #id />
-      <input type="hidden" name="capacity_provider_id" id="capacity_provider_id" formControlName="capacity_provider_id" #capacity_provider_id />
+      <label>Provider:</label>
+      <select name="capacity_provider_id" formControlName="capacity_provider_id" #capacity_provider_id class="form-control">
+          <option value="{{pro.id}}" *ngFor="let pro of providers">{{pro.name}} | {{pro.email}} | {{pro.contact_number}}  </option>
+      </select>
+
       <label>Object:</label>
       <input type="text" class="form-control" name="Object" id="Object" placeholder="Object" formControlName="Object" #Object required>
   </div>
@@ -29,7 +32,7 @@
       <label>Comment:</label>
       <input type="text" class="form-control" name="comment" id="comment" formControlName="comment" #comment placeholder="Currency">
   </div>
-  <button type="button" class="btn btn-primary" (click)="add(id.value ,capacity_provider_id.value ,Object.value ,From.value ,To.value ,is_active.value ,amount.value ,currency.value ,comment.value)" >Save</button>
+  <button type="button" class="btn btn-primary" (click)="add(capacity_provider_id.value ,Object.value ,From.value ,To.value ,is_active.value ,amount.value ,currency.value ,comment.value)" >Save</button>
 </form>
 
 <div *ngIf="bookings.length >0">

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import Booking from '../Booking'
+import Booking from '../Booking';
+import Provider from '../Provider';
+import { BookingService } from '../booking.service';
+import { ProviderService } from '../provider.service';
 
 @Component({
   selector: 'app-booking-add',
@@ -7,15 +10,18 @@ import Booking from '../Booking'
   styleUrls: ['./booking-add.component.css']
 })
 export class BookingAddComponent implements OnInit {
+  providers: Provider[];
   bookings: Array<Booking> = new Array<Booking>();
   book: Booking;
-  constructor() { }
+  constructor(private bs: BookingService, private ps: ProviderService) {}
 
-  add(id, capacity_provider_id, Object, From, To, is_active, amount, currency, comment) {
+  // tslint:disable-next-line: variable-name
+  add(capacity_provider_id, Object, From, To, is_active, amount, currency, comment) {
 
+    // tslint:disable-next-line: prefer-const
     let x = new  Booking();
-    x.id = 1;
-    x.capacity_provider_id = 1;
+    x.id = 0;
+    x.capacity_provider_id = capacity_provider_id;
     x.object_name = Object;
     x.date_from = From;
     x.date_to = To;
@@ -30,8 +36,13 @@ export class BookingAddComponent implements OnInit {
     for (let index = 0; index < this.bookings.length; index++) {
       console.log(this.bookings[index].comment);
     }
+
+    console.log(capacity_provider_id);
   }
 
   ngOnInit() {
+    this.ps.Get().subscribe((data: Provider[]) => {
+      this.providers = data;
+    });
   }
 }
