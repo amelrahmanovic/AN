@@ -1,40 +1,47 @@
+<br />
+<button type="button" class="btn btn-primary" data-toggle="modal" routerLink="/booking/add">
+  Add new
+</button>
+
+<br />
+<br />
 <table class="table table-striped">
   <thead class="thead-dark">
-      <tr>
-          <th>
-              Object:
-          </th>
-          <th>
-              From:
-          </th>
-          <th>
-              To:
-          </th>
-          <th>
-              Active:
-          </th>
-          <th>
-              Amount:
-          </th>
-          <th>
-              Comment:
-          </th>
-          <th>
-              Action:
-          </th>
-      </tr>
+    <tr>
+      <th>
+        Object:
+      </th>
+      <th>
+        From:
+      </th>
+      <th>
+        To:
+      </th>
+      <th>
+        Active:
+      </th>
+      <th>
+        Amount:
+      </th>
+      <th>
+        Comment:
+      </th>
+      <th>
+        Action:
+      </th>
+    </tr>
   </thead>
   <tbody>
-          <tr *ngFor="let x of bookings">
-              <td> {{x.object_name}} </td>
-              <td> {{x.date_from | date:"MM/dd/yyyy"}} </td>
-              <td> {{x.date_to | date:"MM/dd/yyyy"}} </td>
-              <td> {{x.is_active}}  </td>
-              <td> {{x.amount}} {{x.currency}} </td>
-              <td> {{x.comment}} </td>
-              <td>
-                  <a (click) = "delete(x.id)" class="btn btn-danger">Delete</a>
-              </td>
-          </tr>
+    <tr *ngFor="let x of bookings">
+      <td> {{x.object_name}} </td>
+      <td> {{x.date_from | date:"MM/dd/yyyy"}} </td>
+      <td> {{x.date_to | date:"MM/dd/yyyy"}} </td>
+      <td> {{x.is_active}} </td>
+      <td> {{x.amount}} {{x.currency}} </td>
+      <td> {{x.comment}} </td>
+      <td>
+        <a (click)="delete(x.id)" class="btn btn-danger">Delete</a>
+      </td>
+    </tr>
   </tbody>
 </table>
