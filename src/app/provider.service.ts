@@ -14,4 +14,10 @@ export class ProviderService {
            .http
            .get(`${this.uri}`);
   }
+  Post(p) {
+    console.log(p);
+
+    this.http.post(`${this.uri}`, p)
+        .subscribe(res => console.log('Done'));
+  }
 }

@@ -6,7 +6,7 @@
               <div class="form-group">
                   <label>Provider:</label>
                   <select name="capacity_provider_id" formControlName="capacity_provider_id" #capacity_provider_id class="form-control">
-                      <option value="{{pro.id}}" *ngFor="let pro of providers">{{pro.name}} | {{pro.email}} | {{pro.contact_number}}  </option>
+                      <option value="{{pro.id}}" *ngFor="let pro of providers">{{pro.name}} | {{pro.email}} | {{pro.contract_number}}  </option>
                   </select>
 
                   <label>Object:</label>
@@ -78,6 +78,7 @@
                     </tr>
                   </tbody>
                 </table>
+                <button type="button" class="btn btn-danger" (click)="storeindatabase()" >Store in database</button>
           </div>
       </div>
 

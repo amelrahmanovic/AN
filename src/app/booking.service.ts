@@ -10,14 +10,14 @@ export class BookingService {
   constructor(private http: HttpClient) { }
 
   Get() {
-    return this
-           .http
-           .get(`${this.uri}`);
+    return this.http.get(`${this.uri}`);
   }
   delete(id) {
     console.log(id);
-    return this
-              .http
-              .delete(`${this.uri}/${id}`);
+    return this.http.delete(`${this.uri}/${id}`);
+  }
+   Post(booking) {
+    console.log(booking);
+    this.http.post(`${this.uri}`, booking).subscribe(res => console.log('Done'));
   }
 }

@@ -5,7 +5,7 @@ export default class BookingModel {
   date_from: Date;
   date_to: Date;
   is_active: boolean;
-  amount: string;
+  amount: number;
   currency: string;
   comment: string;
 }
