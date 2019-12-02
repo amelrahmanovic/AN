@@ -5,10 +5,23 @@
           <form >
               <div class="form-group">
                   <label>Provider:</label>
-                  <select name="capacity_provider_id" formControlName="capacity_provider_id" #capacity_provider_id class="form-control">
-                      <option value="{{pro.id}}" *ngFor="let pro of providers">{{pro.name}} | {{pro.email}} | {{pro.contract_number}}  </option>
-                  </select>
 
+                  <div class="container" style="padding-left: 0px;">
+                      <div class="row">
+                        <div class="col-lg-10 col-md-10 col-md-10 col-sm-10">
+                            <select name="capacity_provider_id" formControlName="capacity_provider_id" #capacity_provider_id class="form-control">
+                                <option value="{{pro.id}}" *ngFor="let pro of providers">{{pro.name}} | {{pro.email}} | {{pro.contract_number}}  </option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-md-2 col-sm-2">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" routerLink="/provider/add">
+                              +
+                            </button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
                   <label>Object:</label>
                   <input type="text" class="form-control" name="Object" id="Object" placeholder="Object" formControlName="Object" #Object required>
               </div>

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { BookingGetComponent } from './booking-get/booking-get.component';
 import { BookingAddComponent } from './booking-add/booking-add.component';
 import { HomeComponent } from './home/home.component';
+import { ProviderAddComponent } from './provider-add/provider-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookingGetComponent,
     BookingAddComponent,
-    HomeComponent
+    HomeComponent,
+    ProviderAddComponent
   ],
   imports: [
     BrowserModule,

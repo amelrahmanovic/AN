@@ -5,6 +5,8 @@ import { BookingGetComponent } from './booking-get/booking-get.component';
 import { BookingAddComponent } from './booking-add/booking-add.component';
 import { HomeComponent } from './home/home.component';
 
+import { ProviderAddComponent } from './provider-add/provider-add.component';
+
 
 const routes: Routes = [
   {
@@ -18,6 +20,10 @@ const routes: Routes = [
   {
     path: 'booking/add',
     component: BookingAddComponent
+  },
+  {
+    path: 'provider/add',
+    component: ProviderAddComponent
   }
 ];
 

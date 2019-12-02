@@ -1,0 +1,23 @@
+<form>
+  <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" name="Name" id="Name" placeholder="Name" #Name required>
+  </div>
+  <div class="form-group">
+      <label>City:</label>
+      <input type="text" class="form-control" name="City" id="City" placeholder="City" #City >
+  </div>
+  <div class="form-group">
+      <label>Phone:</label>
+      <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Phone" #Phone>
+  </div>
+  <div class="form-group">
+      <label>E-mail:</label>
+      <input type="email" class="form-control" name="Email" id="Email" placeholder="E-mail" #Email>
+  </div>
+  <div class="form-group">
+      <label>Contact number:</label>
+      <input type="text" class="form-control" name="Contact" id="Contact" placeholder="Contact" #Contact>
+  </div>
+  <button type="button" class="btn btn-primary" (click)="add(Name.value, City.value, Phone.value, Email.value, Contact.value)">Save</button>
+</form>
