@@ -8,6 +8,7 @@ import { BookingGetComponent } from './booking-get/booking-get.component';
 import { BookingAddComponent } from './booking-add/booking-add.component';
 import { HomeComponent } from './home/home.component';
 import { ProviderAddComponent } from './provider-add/provider-add.component';
+import { ProviderGetComponent } from './provider-get/provider-get.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProviderAddComponent } from './provider-add/provider-add.component';
     BookingGetComponent,
     BookingAddComponent,
     HomeComponent,
-    ProviderAddComponent
+    ProviderAddComponent,
+    ProviderGetComponent
   ],
   imports: [
     BrowserModule,

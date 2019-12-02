@@ -10,14 +10,14 @@ export class ProviderService {
   constructor(private http: HttpClient) { }
 
   Get() {
-    return this
-           .http
-           .get(`${this.uri}`);
+    return this.http.get(`${this.uri}`);
   }
   Post(p) {
     console.log(p);
-
-    this.http.post(`${this.uri}`, p)
-        .subscribe(res => console.log('Done'));
+    this.http.post(`${this.uri}`, p).subscribe(res => console.log('Added Done'));
+  }
+  Delete(id) {
+    console.log('Deleted Done');
+    return this.http.delete(`${this.uri}/${id}`);
   }
 }

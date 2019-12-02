@@ -1,0 +1,46 @@
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Provider:
+            </th>
+            <th>
+                City:
+            </th>
+            <th>
+                Phone:
+            </th>
+            <th>
+                E-mail:
+            </th>
+            <th>
+                Contact number:
+            </th>
+            <th>
+              Actions:
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of providers">
+            <td>
+                {{x.name}}
+            </td>
+            <td>
+              {{x.city}}
+            </td>
+            <td>
+              {{x.phone}}
+            </td>
+            <td>
+              {{x.email}}
+            </td>
+            <td>
+              {{x.contract_number}}
+            </td>
+            <td>
+                <a (click)="delete(x.id)" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
